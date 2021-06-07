@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainPageFragment">
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.islimakkaya.foodapp.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.islimakkaya.foodapp.fragment.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/detailAction"
+            app:destination="@id/detailPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPageFragment"
+        android:name="com.islimakkaya.foodapp.fragment.DetailPageFragment"
+        android:label="DetailPageFragment"
+        tools:layout="@layout/fragment_detail_page">
+        <argument
+            android:name="foodObject"
+            app:argType="com.islimakkaya.foodapp.entity.Foods" />
+    </fragment>
+</navigation>
